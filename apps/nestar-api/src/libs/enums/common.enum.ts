@@ -15,6 +15,7 @@ export enum Message {
   USED_NICK_PHONE = "You are inserting already used nick or phone!",
   TOKEN_NOT_EXIST = "Bearer Token is not provided!",
   ONLY_SPECIFIC_REQUEST = "Allowed only for members with specific roles!",
+  ONLY_SPECIFIC_ROLES_ALLOWED= "Allowed only for members with specific roles!",
   NOT_ALLOWED_REQUEST = "Not Allowed Request!",
   PROVIDE_ALLOWED_FORMAT = "Please provide jpg, jpeg or png images!",
   SELF_SUBSCRIPTION_DENIED = "Self subcription is denied!",
