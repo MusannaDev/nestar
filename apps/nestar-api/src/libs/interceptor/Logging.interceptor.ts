@@ -1,7 +1,7 @@
 
 import { Injectable, NestInterceptor, ExecutionContext, CallHandler, Logger } from '@nestjs/common';
 import { GqlContextType, GqlExecutionContext } from '@nestjs/graphql';
-import { stringify } from 'querystring';
+//import { stringify } from 'querystring';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
@@ -15,6 +15,7 @@ export class LoggingInterceptor implements NestInterceptor {
     
     if(requestType === "http") {
       // develop if needed
+      return next.handle().pipe();
     } else if(requestType === "graphql") {
 
       /* (1) Print Request */
