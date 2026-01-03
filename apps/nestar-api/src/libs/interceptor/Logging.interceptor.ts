@@ -23,7 +23,7 @@ export class LoggingInterceptor implements NestInterceptor {
       const gqlContext = GqlExecutionContext.create(context);
       this.logger.log(`${this.stringify(gqlContext.getContext().req.body)}`, 'REQUEST');
 
-      /* (2) Erros handling via GraphQl */
+      /* (2) Errors handling via GraphQl */
       // Error handling will auto by GraphQl in AppModule.ts globally
 
       /* (3) No Errors, giving response below  */

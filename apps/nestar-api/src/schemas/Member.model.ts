@@ -41,7 +41,7 @@ const MemberSchema = new Schema(
 		},
 
 		memberFullName: {
-			type: Number,
+			type: String,
 		},
 
 		memberImage: {
