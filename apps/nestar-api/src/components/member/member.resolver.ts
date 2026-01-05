@@ -36,7 +36,7 @@ export class MemberResolver {
   @Query(() => String)
   public async checkAuth(@AuthMember('memberNick') memberNick: string): Promise<String> {
     console.log("Mutation: checkAuth");
-    console.log("memberNick:", memberNick)
+    console.log("memberNick:", memberNick);
     return `Hi ${memberNick}`;
   }
 
