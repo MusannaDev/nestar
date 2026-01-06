@@ -98,7 +98,7 @@ export class MemberResolver {
   }
 
 
-  // IMAGE UPLOADER (member.resolver.ts)
+  // IMAGE UPLOADER 
 
 
 @UseGuards(AuthGuard)
