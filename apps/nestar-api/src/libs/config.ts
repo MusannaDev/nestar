@@ -6,6 +6,16 @@ export const avaialableAgentSorts = ["createdAt", "updatedAt", "memberLikes", "m
 
 export const avaialableMemberSorts = ["createdAt", "updatedAt", "memberLikes", "memberViews"];
 
+export const availableOptions = ['propertyBarter', 'propertyRent'];
+export const avaialablePropertySorts = [
+	"createdAt", 
+	"updatedAt", 
+	"propertyLikes", 
+	"propertyViews", 
+	"propertyRank", 
+	"propertyPrice",
+];
+
 // IMAGE CONFIGURATION 
 
 
@@ -17,4 +27,13 @@ export const getSerialForImage = (filename: string) => {
 
 export const shapeIntoMongoObjectId = (target: any) => {
   return typeof target === "string" ? new ObjectId(target) : target;
+}
+
+export const lookupMember = {
+	$lookup: {
+		from: 'members',
+		localField: 'memberId',
+		foreignField: '_id',
+		as: 'memberData',
+	},
 }
