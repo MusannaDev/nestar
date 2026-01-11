@@ -237,11 +237,10 @@ export class PropertyService {
   }
   
   
-  public async updatePropertyByAdmin(memberId: ObjectId, input: PropertyUpdate): Promise<Property> {
+  public async updatePropertyByAdmin(input: PropertyUpdate): Promise<Property> {
     let { propertyStatus, soldAt, deletedAt } = input;
     const search: T = {
       _id: input._id,
-      memberId: memberId,
       propertyStatus: PropertyStatus.ACTIVE,
     };
 
@@ -257,7 +256,7 @@ export class PropertyService {
 
     if (soldAt || deletedAt) {
       await this.memberService.memberStatsEditor({
-        _id: memberId,
+        _id: result.memberId,
         targetKey: 'memberProperties',
         modifier: -1,
       });
@@ -265,5 +264,7 @@ export class PropertyService {
 
     return result;
   }
+
+  /* public async removeProperty */
 
 }
