@@ -16,10 +16,10 @@ import { lookupMember, shapeIntoMongoObjectId } from '../../libs/config';
 @Injectable()
 export class BoardArticleService {
   constructor(@InjectModel
-      ("BoardArticle") private readonly boardArticleModel: Model<BoardArticle>,
-      private memberService: MemberService,
-      private viewService: ViewService,
-    ) {}
+    ("BoardArticle") private readonly boardArticleModel: Model<BoardArticle>,
+    private memberService: MemberService,
+    private viewService: ViewService,
+  ) {}
 
   public async createBoardArticle(memberId: ObjectId, input: BoardArticleInput): Promise<BoardArticle> {
     input.memberId = memberId;

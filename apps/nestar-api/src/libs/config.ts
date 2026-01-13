@@ -3,9 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import * as path from 'path';
 
 export const avaialableAgentSorts = ["createdAt", "updatedAt", "memberLikes", "memberViews", "memberRank"];
-
 export const avaialableMemberSorts = ["createdAt", "updatedAt", "memberLikes", "memberViews"];
-
 export const availableOptions = ['propertyBarter', 'propertyRent'];
 export const avaialablePropertySorts = [
 	"createdAt", 
@@ -15,8 +13,8 @@ export const avaialablePropertySorts = [
 	"propertyRank", 
 	"propertyPrice",
 ];
-
 export const avaialableBoardArticleSorts = ["createdAt", "updatedAt", "articleLikes", "artickeViews"];
+export const avaialableCommentSorts = ["createdAt", "updatedAt",];
 
 // IMAGE CONFIGURATION 
 
