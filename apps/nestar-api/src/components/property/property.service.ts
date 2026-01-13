@@ -119,10 +119,10 @@ export class PropertyService {
     const result = await this.propertyModel
       .aggregate([
         { $match: match },
-        { $sort: sort },
         {
           $facet: {
             list: [
+              { $sort: sort },
               { $skip: (input.page - 1) * input.limit },
               { $limit: input.limit },
               // meLiked
