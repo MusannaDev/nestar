@@ -9,7 +9,9 @@ import BoardArticleSchema from '../../schemas/BoardArticle.model';
 
 @Module({
   imports: [
-    MongooseModule.forFeature([{name: "BoardArticle", schema: BoardArticleSchema}]),
+    MongooseModule.forFeature([
+      {name: "BoardArticle", schema: BoardArticleSchema}  // Must match exactly!
+    ]),
     AuthModule, 
     ViewModule,
     MemberModule,
