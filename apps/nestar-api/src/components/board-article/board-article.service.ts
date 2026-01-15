@@ -90,7 +90,7 @@ export class BoardArticleService {
 
   public async getBoardArticles(memberId: ObjectId, input: BoardArticlesInquiry): Promise<BoardArticles> {
     const { articleCategory, text } = input.search;
-    const match: T = { boardArticleStatus: BoardArticleStatus.ACTIVE };
+    const match: T = { articleStatus: BoardArticleStatus.ACTIVE };
     const sort: T = { [input?.sort ?? 'createdAt']: input?.direction ?? Direction.DESC };
 
     if (articleCategory) match.articleCategory = articleCategory;
@@ -98,6 +98,7 @@ export class BoardArticleService {
     if (input.search?.memberId) {
       match.memberId = shapeIntoMongoObjectId(input.search.memberId);
     }
+    console.log("match:", match);
 
     const result = await this.boardArticleModel
       .aggregate([
