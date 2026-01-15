@@ -15,6 +15,7 @@ import { Like } from '../../libs/dto/like/like';
 import { LikeInput } from '../../libs/dto/like/like.input';
 import { LikeGroup } from '../../libs/enums/like.enum';
 import { LikeService } from '../like/like.service';
+import { FollowService } from '../follow/follow.service';
 
 @Injectable()
 export class MemberService {
@@ -23,6 +24,7 @@ export class MemberService {
     private authService: AuthService,
     private viewService: ViewService,
     private likeService: LikeService,
+    
   ) {}
 
   public async signup(input: MemberInput): Promise<Member> {
