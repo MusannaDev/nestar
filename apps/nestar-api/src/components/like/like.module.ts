@@ -10,10 +10,6 @@ import { BoardArticleModule } from '../board-article/board-article.module';
 @Module({
   imports: [
     MongooseModule.forFeature([{name: "Like", schema: LikeSchema}]),
-    AuthModule, 
-    ViewModule,
-    MemberModule,
-    BoardArticleModule
   ],
   providers: [LikeService],
   exports: [LikeService]
