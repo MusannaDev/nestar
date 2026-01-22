@@ -18,6 +18,6 @@ import { LikeModule } from '../like/like.module';
   ],
 
   providers: [PropertyResolver, PropertyService],
-  exports: [PropertyService]
+  exports: [PropertyService, MongooseModule],
 })
 export class PropertyModule {}
