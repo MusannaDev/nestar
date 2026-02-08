@@ -15,7 +15,7 @@ export const avaialablePropertySorts = [
 	"propertyRank", 
 	"propertyPrice",
 ];
-export const avaialableBoardArticleSorts = ["createdAt", "updatedAt", "articleLikes", "artickeViews"];
+export const avaialableBoardArticleSorts = ["createdAt", "updatedAt", "articleLikes", "articleViews"];
 export const avaialableCommentSorts = ["createdAt", "updatedAt",];
 
 // IMAGE CONFIGURATION 
