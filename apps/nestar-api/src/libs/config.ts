@@ -31,13 +31,13 @@ export const shapeIntoMongoObjectId = (target: any) => {
   return typeof target === "string" ? new ObjectId(target) : target;
 }
 
-export const lookupAuthMemberLiked = (membrId: T, targetRefId: string = '$_id') => {
+export const lookupAuthMemberLiked = (memberId: T, targetRefId: string = '$_id') => {
 	return {
 		$lookup: {
 		from: 'likes',
 		let: {
 			localLikeRefId: targetRefId,
-			localMemberId: membrId,
+			localMemberId: memberId,
 			localMyFavorite: true
 		},
 		pipeline: [
