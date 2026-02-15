@@ -24,7 +24,7 @@ export enum Message {
 }
 
 export enum Direction {
-  ABC = 1,
+  ASC = 1,
   DESC = -1,
 }
 registerEnumType(Direction, { name: "Direction" });

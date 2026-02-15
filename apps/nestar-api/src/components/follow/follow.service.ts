@@ -38,7 +38,7 @@ export class FollowService {
       return await this.followModel.create({
         followingId: followingId,
         followerId: followerId
-      })
+      });
     } catch (err) {
       console.log("Error, Service.model");
       throw new BadRequestException(Message.CREATE_FAILED)
@@ -54,7 +54,7 @@ export class FollowService {
     const result = await this.followModel.findOneAndDelete({
       followingId: followingId,
       followerId: followerId,
-    });
+    }).exec();
     
     if (!result) throw new InternalServerErrorException(Message.NO_DATA_FOUND);
 
@@ -101,7 +101,7 @@ export class FollowService {
   }
 
 
-  public async getMemberFollowers(memberId: ObjectId, input: FollowInquiry): Promise<Followers> {
+  public async getMemberFollowers(memberId: ObjectId, input: FollowInquiry):  Promise<Followers> {
     const { page, limit, search } = input;
     if (!search?.followingId) throw new InternalServerErrorException(Message.BAD_REQUEST);
 
@@ -133,7 +133,7 @@ export class FollowService {
     if (!result.length) throw new InternalServerErrorException(Message.NO_DATA_FOUND);
 
     return result[0];
-    }
+  }
 
 
 }
